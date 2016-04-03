@@ -3,10 +3,8 @@ otp_release:
   - 18.0
   - 17.4
   - R16B
-addons:
-  apt:
-    packages:
-      - postgresql
+services:
+  - postgresql
 install: echo "hi" # stub command; otherwise travis runs 'rebar get-deps'
 script: make all edocs && bin/zotonic runtests
 sudo: false
