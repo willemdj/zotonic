@@ -5,6 +5,8 @@ otp_release:
   - R16B
 services:
   - postgresql
+before_script:
+  - psql -c 'create user zotonic; ALTER USER zotonic CREATEDB;' -U postgres
 install: echo "hi" # stub command; otherwise travis runs 'rebar get-deps'
 script: make all edocs && bin/zotonic runtests
 sudo: false
