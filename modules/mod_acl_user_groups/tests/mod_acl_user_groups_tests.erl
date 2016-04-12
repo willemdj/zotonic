@@ -6,8 +6,8 @@
 
 person_can_edit_own_resource_test() ->
     Context = z_context:new(testsandboxdb),
-    z_module_manager:activate(mod_content_groups, Context),
-    z_module_manager:activate(mod_acl_user_groups, Context),
+    z_module_manager:activate_wait(mod_content_groups, Context),
+    z_module_manager:activate_wait(mod_acl_user_groups, Context),
 
     %% Person must be able to edit person category
     m_acl_rule:replace_managed(
